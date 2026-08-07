@@ -122,3 +122,6 @@ footer {
   .header-top { flex-direction: column; text-align: center; }
   .skills-grid { grid-template-columns: 1fr; }
                 }
+section p {
+  text-align: justify;
+}
