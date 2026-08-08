@@ -2,7 +2,7 @@
 
 An AI-powered web application that analyzes customer churn emails and provides actionable business insights for bank management. Built with Gradio.
 
-**Live Demo**: [Click here to try on colab] https://colab.research.google.com/github/JeremieRaja/my_portefolio.github.io/blob/main/projects/churn-detector/churn_detector_abc.ipynb
+**Live Demo**: [Click here to try on colab https://colab.research.google.com/github/JeremieRaja/my_portefolio.github.io/blob/main/projects/churn-detector/churn_detector_abc.ipynb ]
 
 ![App Screenshot](assets/demo_screenshot.png)
 
