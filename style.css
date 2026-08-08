@@ -169,7 +169,7 @@ ul { padding-left: 20px; }
 /* BOUTONS PROJETS - GITHUB + COLAB */
 .project-buttons {
   display: flex;
-  gap: 20px;
+  gap: 12px;
   margin-top: 15px;
   margin-bottom: 8px;
   flex-wrap: wrap;
