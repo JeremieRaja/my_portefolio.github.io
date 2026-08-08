@@ -1,8 +1,8 @@
 # =============================================================================
-# INTERFACE GRAPHIQUE "DÉTECTEUR FUITE CLIENTS BCI"
+# GUI "BANQUE ABC CUSTOMER CHURN DETECTOR"
 # =============================================================================
 
-# 1. INSTALLATION DES OUTILS - s’exécute auto
+# 1. INSTALL TOOLS - auto run
 !pip install -q gradio pandas matplotlib
 
 import pandas as pd
@@ -10,107 +10,107 @@ from collections import Counter
 import matplotlib.pyplot as plt
 import gradio as gr
 
-# 2. BASE DE DONNÉES : 20 emails test BCI.
-EMAILS_BCI_DEMO = [
-  "Bonjour, je veux fermer mon compte BCI. Les taxes sont trop élevées chaque mois.",
-  "Péssimo atendimento na agência da 24 de Julho. 3h na fila para nada. Quero fechar.",
-  "App BCI não funciona no meu telefone desde atualização. Vou para Millennium.",
-  "Tiraram-me 500mt não sei de quê. Taxa fantasma. Encerrem a conta por favor.",
-  "Demora muito para ser atendido no balcão. Perco manhã toda. Vou fechar.",
-  "Cobram taxa de manutenção e taxa de inactividade. Roubo. Quero sair do BCI.",
-  "Atendente foi muito grosso comigo. Falta de respeito. Fechem minha conta.",
-  "Aplicativo dá sempre erro quando tento fazer transferência. Cansado.",
-  "Fila enorme todos os dias na agência Matola. Não tenho tempo para isso.",
-  "Não explicam as taxas. Só vejo dinheiro a sumir. Quero encerrar.",
-  "Sistema sempre fora do ar quando preciso. Vou mudar de banco.",
-  "Taxa de levantamento no ATM de outro banco é absurda. Fecho conta.",
-  "Funcionários não resolvem problema. Empurram de um para outro. Chega.",
-  "E-jamii vive com problemas. Não consigo consultar saldo. Desisto.",
-  "Cobrança indevida de 200mt. Ninguém sabe explicar. Encerrem.",
-  "Tempo de espera no 24443 é 40min. Serviço horrível. Vou sair.",
-  "Cada vez que vou agência perco dia trabalho. Não compensa mais.",
-  "Descontos que não entendo no extrato. Falta transparência. Adeus BCI.",
-  "App não abre no iPhone 11. Já reclamei 3x. Vou fechar.",
-  "Muito burocracia para tratar um assunto simples. Outros bancos são melhores."
+# 2. DEMO DATABASE: 20 sample emails Banque ABC.
+EMAILS_ABC_DEMO = [
+  "Hello, I want to close my Banque ABC account. The fees are too high every month.",
+  "Terrible service at the downtown branch. 3h in line for nothing. I want to close.",
+  "Banque ABC app doesn't work on my phone since the update. I'm switching to the competition.",
+  "They charged me $50 and I don't know why. Ghost fees. Please close the account.",
+  "Too much waiting at the counter. I waste the whole morning. I'm closing.",
+  "They charge account maintenance and inactivity fees. It's robbery. I want to leave Banque ABC.",
+  "The agent was very rude to me. Lack of respect. Close my account.",
+  "The app crashes every time I try to make a transfer. I'm done.",
+  "Huge queue every day at the branch. I don't have time for this.",
+  "They don't explain the fees. I just see money disappearing. I want to close.",
+  "System is always down when I need it. I'm changing banks.",
+  "ATM withdrawal fees at other banks are absurd. Closing account.",
+  "Staff don't solve the problem. They pass me from one to another. Enough.",
+  "Mobile banking always has bugs. Can't check balance. I give up.",
+  "Wrong charge of $20. No one can explain. Close it.",
+  "40min wait on customer service line. Horrible service. I'm leaving.",
+  "Every time I go to the branch I lose a work day. Not worth it anymore.",
+  "Charges I don't understand on statement. Lack of transparency. Goodbye Banque ABC.",
+  "App won't open on iPhone. I complained 3 times already. Closing.",
+  "Too much paperwork for a simple request. Other banks are better."
 ]
 
-# 3. CERVEAU IA : classifie motif de fuite
+# 3. AI BRAIN: classify churn reason
 MOTIFS = {
-  "Taxas elevadas": ["taxa", "taxas", "cobram", "desconto", "tiraram", "roubo", "manutenção", "inactividade", "fantasma", "cobrança"],
-  "Mau atendimento": ["fila", "demora", "espera", "atendente", "grosso", "respeito", "funcionários", "burocracia", "balcão"],
-  "App/Sistema falha": ["app", "aplicativo", "sistema", "erro", "não funciona", "não abre", "e-jamii", "fora do ar", "transferência"],
-  "Falta transparência": ["não explicam", "não sei", "não entendo", "transparência", "sumir"]
+  "High Fees": ["fee", "fees", "charged", "charge", "maintenance", "inactivity", "debit", "robbery"],
+  "Poor Service": ["queue", "line", "wait", "waiting", "agent", "rude", "respect", "staff", "paperwork", "branch", "counter"],
+  "App/System Failure": ["app", "application", "system", "crash", "bug", "doesn't work", "won't open", "mobile banking", "transfer", "down"],
+  "Lack of Transparency": ["don't explain", "don't know", "don't understand", "transparency", "disappearing"]
 }
 
-def classer_email(texte):
+def classify_email(texte):
   texte = texte.lower()
   for motif, mots_cles in MOTIFS.items():
-    if any(palavra in texte for palavra in mots_cles):
+    if any(mot in texte for mot in mots_cles):
       return motif
-  return "Outro"
+  return "Other"
 
-# 4. FONCTION PRINCIPALE : lancée par le bouton
-def analisar_fuga_bci(texte_emails):
-  # Si utilisateur colle ses emails, on utilise. Sinon on prend démo
+# 4. MAIN FUNCTION: triggered by button
+def analyze_churn_abc(texte_emails):
+  # If user pastes emails, use them. Else use demo
   if texte_emails.strip():
-    emails = [linha.strip() for linha in texte_emails.split('\n') if linha.strip()]
+    emails = [ligne.strip() for ligne in texte_emails.split('\n') if ligne.strip()]
   else:
-    emails = EMAILS_BCI_DEMO
+    emails = EMAILS_ABC_DEMO
 
-  # Analyse
-  resultats = [classer_email(email) for email in emails]
+  # Analysis
+  resultats = [classify_email(email) for email in emails]
   contagem = Counter(resultats)
   total = len(emails)
 
-  # Création graphique
+  # Create chart
   fig, ax = plt.subplots(figsize=(6,6))
   ax.pie(contagem.values(), labels=contagem.keys(), autopct='%1.0f%%', startangle=90)
-  ax.set_title(f'Porque {total} clientes fogem do BCI')
+  ax.set_title(f'Why {total} customers are leaving Banque ABC')
 
-  # Création rapport texte
+  # Create text report
   top1 = contagem.most_common(1)[0]
   relatorio = f"""
-=== RELATÓRIO FUGA CLIENTES BCI ===
-Total emails analisados: {total}
+=== BANQUE ABC CUSTOMER CHURN REPORT ===
+Total emails analyzed: {total}
 
-TOP 3 MOTIVOS DE SAÍDA:
+TOP 3 REASONS FOR CHURN:
 """
   for i, (motif, qtd) in enumerate(contagem.most_common(3), 1):
     percent = (qtd/total)*100
-    relatorio += f"{i}. {motif}: {qtd} clientes = {percent:.0f}%\n"
+    relatorio += f"{i}. {motif}: {qtd} customers = {percent:.0f}%\n"
 
-  relatorio += f"\nACÇÃO URGENTE BCI:\n"
-  if top1[0] == "Taxas elevadas":
-    relatorio += "-> Rever tabela de taxas + comunicar melhor na agência.\n"
-  elif top1[0] == "Mau atendimento":
-    relatorio += "-> Formar equipa balcão + reduzir filas 24 Julho e Matola.\n"
-  elif top1[0] == "App/Sistema falha":
-    relatorio += "-> Corrigir bug iPhone + erro transferência. Prioridade TI.\n"
+  relatorio += f"\nURGENT ACTION FOR BANQUE ABC:\n"
+  if top1[0] == "High Fees":
+    relatorio += "-> Review fee structure + better communication in branches.\n"
+  elif top1[0] == "Poor Service":
+    relatorio += "-> Train counter staff + reduce wait times in branches.\n"
+  elif top1[0] == "App/System Failure":
+    relatorio += "-> Fix iPhone bugs + transfer errors. IT Priority.\n"
 
-  clientes_salvos = int(total * 0.02 * 30) # 2% sauvés sur 30j
-  ganho = clientes_salvos * 4000
-  relatorio += f"\nROI: Se salvar só 2% fuga = +{ganho:,} MZN/mês para BCI."
-  relatorio += f"\nCusto serviço: 120,000 MZN/mês. Piloto grátis 14 dias."
+  clients_saved = int(total * 0.02 * 30) # 2% saved over 30 days
+  revenue = clients_saved * 40 # Assumption: $40 margin per customer
+  relatorio += f"\nROI: Saving just 2% of churn = +${revenue:,}/month for Banque ABC."
+  relatorio += f"\nSolution Cost: $1,200/month. Free 14-day pilot."
 
   return fig, relatorio
 
-# 5. CRÉATION INTERFACE GRAPHIQUE 1 BOUTON
+# 5. CREATE GUI 1-BUTTON
 demo = gr.Interface(
-  fn=analisar_fuga_bci,
+  fn=analyze_churn_abc,
   inputs=gr.Textbox(
-    label="Colar emails BCI aqui (1 por linha) ou deixar vazio para usar démo 20 emails",
+    label="Paste Banque ABC emails here (1 per line) or leave blank to use 20 demo emails",
     lines=8,
-    placeholder="Cole aqui os emails 'quero fechar conta'..."
+    placeholder="Paste emails like 'I want to close my account'..."
   ),
   outputs=[
-    gr.Plot(label="Gráfico para Director BCI"),
-    gr.Textbox(label="Relatório + Recomendação + ROI", lines=15)
+    gr.Plot(label="Chart for Banque ABC Management"),
+    gr.Textbox(label="Report + Recommendation + ROI", lines=15)
   ],
-  title="BCI - Detector Fuga Clientes",
-  description="Clique 'Submit'. IA analisa em 2s e diz porque clientes fogem + quanto BCI perde. 100% tablet.",
-  submit_btn="Analisar Agora",
-  clear_btn="Limpar"
+  title="Banque ABC - Customer Churn Detector",
+  description="Click 'Analyze'. AI analyzes in 2s and tells why customers leave + how much the bank loses. 100% tablet ready.",
+  submit_btn="Analyze Now",
+  clear_btn="Clear"
 )
 
-# 6. LANCER INTERFACE
+# 6. LAUNCH INTERFACE
 demo.launch(share=True, debug=False)
