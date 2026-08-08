@@ -4,7 +4,21 @@ An AI-powered web application that analyzes customer churn emails and provides a
 
 **Live Demo**: [Click here to run on colab https://colab.research.google.com/github/JeremieRaja/my_portefolio.github.io/blob/main/projects/churn-detector/churn_detector_abc.ipynb ]
 
-![App Screenshot](assets/demo_screenshot.png)
+## Screenshots
+
+Click on any image to view full size.
+
+### 1. Input Interface
+Users can paste emails or use demo data.  
+[![Input Screen](assets/screenshot_1_input.png)](assets/screenshot_1_input.png)
+
+### 2. Churn Analysis Chart  
+AI generates a pie chart showing why customers are leaving.  
+[![Chart Screen](assets/screenshot_2_chart.png)](assets/screenshot_2_chart.png)
+
+### 3. AI Report + ROI  
+Instant business report with recommendations and projected savings.  
+[![Report Screen](assets/screenshot_3_report.png)](assets/screenshot_3_report.png)
 
 ## The Business Problem
 
