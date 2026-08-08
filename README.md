@@ -28,4 +28,4 @@ Location: Mozambique | Open to: Digital & AI Officer roles
 `Python` `SQL` `NLP` `LLM` `Gradio` `Power BI` `APIs` `Automation` `HTML/CSS` `oracle` `MongoDB`
 
 ---
-Languages: [English]| [Français]| [Português]
+Languages: `English`| `Français`| `Português`
