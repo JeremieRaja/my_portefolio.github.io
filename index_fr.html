@@ -3,20 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Raja Anton Dignas | Banque Digitale, Data & Spécialiste IA</title>
+  <title>Raja Anton Dignas | Spécialiste Digital, Data & IA</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <div class="header-top">
+  <div class="header-top">
+    <!-- 1. Photo à Gauche -->
+    <div class="header-left">
       <img src="photo.jpg" alt="Raja Anton Dignas" class="profile-pic">
-      
-      <div class="header-center">
-        <h1>Raja Anton Dignas</h1>
-        <p class="subtitle">Banque Digitale & Data Intelligence | Spécialiste IA & Automatisation</p>
-        <p class="header-info">Zambézie, Mozambique | Disponibilité Immédiate</p>
-      </div>
+    </div>
 
+    <!-- 2. Nom + Infos au Centre -->
+    <div class="header-center">
+      <h1>Raja Anton Dignas</h1>
+      <p class="subtitle">Banque Digitale & Data Intelligence | Spécialiste IA & Automatisation</p>
+      <p class="header-info">Zambezia, Mozambique | Disponibilité Immédiate</p>
+
+      <!-- Les liens en dessous du nom -->
+      <div class="links">
+        <a href="mailto:rajadignas@gmail.com" target="_blank">Gmail</a>
+        <a href="tel:+258849115598">Téléphone</a>
+        <a href="https://linkedin.com/in/raja-dignas-117759208" target="_blank">LinkedIn</a>
+        <a href="CV_Raja_Dignas_FR.pdf" target="_blank">Télécharger CV</a>
+      </div>
+    </div>
+
+    <!-- 3. Langue à Droite -->
+    <div class="header-right">
       <div class="lang-dropdown">
         <select onchange="window.location.href=this.value">
           <option value="index.html">EN</option>
@@ -25,112 +39,116 @@
         </select>
       </div>
     </div>
-
-    <div class="links">
-      <a href="mailto:rajadignas@gmail.com" target="_blank">Gmail</a>
-      <a href="tel:+258849115598">Téléphone</a>
-      <a href="https://linkedin.com/in/raja-dignas-117759208" target="_blank">LinkedIn</a>
-      <a href="CV_Raja_Dignas_FR.pdf" target="_blank">Télécharger CV</a>
-    </div>
+  </div>
   </header>
+  <main>
+    <section>
+      <h2>Résumé Professionnel</h2>
+      <p>MSc en Intelligence Artificielle spécialité NLP + Licence en Génie des Systèmes d'Information. 
+      Je me concentre sur l'analyse de gros volumes de données, l'automatisation des reportings, le développement de tableaux de bord KPI et la qualité des données pour appuyer la prise de décision en Banque Digitale et Tech.  
+      Expérience prouvée en ETL avec Python/SQL, modélisation de bases de données bancaires et analyse de satisfaction client avec NLP et ML. 
+      Proactif, rigoureux et avec un fort sens des responsabilités dans le traitement des données sensibles. Objectif : Transformer la donnée en impact business.</p>
+    </section>
 
-  <section>
-    <h2>Profil Professionnel</h2>
-    <p>Master en Intelligence Artificielle spécialisation TALN + Licence en Ingénierie des Systèmes d'Information. 
-    Je me concentre sur l'analyse de grands volumes de données, l'automatisation du reporting, le développement de tableaux de bord KPI et la garantie de la qualité des données pour l'aide à la décision dans la Banque Digitale et la Tech.  
-    Expérience prouvée en ETL avec Python/SQL, modélisation de bases de données bancaires et analyse de satisfaction client avec NLP et ML. 
-    Proactif, rigoureux et avec un fort sens des responsabilités dans le traitement des données sensibles. Objectif : Transformer la donnée en impact business.</p>
-  </section>
+    <section>
+      <h2>Compétences Clés</h2>
+      <div class="skills-grid">
+        <div><b>IA & ML:</b> NLP, BERT, CamemBERT, Hugging Face, Analyse de Sentiment, Modélisation Prédictive, Scikit-learn, TensorFlow, Keras</div>
+        <div><b>Data & BI:</b> Python, Pandas, SQL Avancé, ETL, Tableaux de Bord KPI, Power BI, Matplotlib, Qualité des Données, Tests A/B</div>
+        <div><b>Bases de Données:</b> SQL Server, Oracle, MySQL, MongoDB. Modélisation, Optimisation, CRUD, Sauvegarde</div>
+        <div><b>Ingénierie & Outils:</b> Git, API, Intégration Système, Google Colab, Jupyter, Streamlit, Gradio, Power Automate</div>
+      </div>
+    </section>
 
-  <section>
-    <h2>Compétences Clés</h2>
-    <div class="skills-grid">
-      <div><b>IA & ML:</b> NLP, BERT, CamemBERT, Hugging Face, Analyse de Sentiments, Modélisation Prédictive, Scikit-learn, TensorFlow, Keras</div>
-      <div><b>Data & BI:</b> Python, Pandas, SQL Avancé, ETL, Tableaux de Bord KPI, Power BI, Matplotlib, Qualité des Données, Tests A/B</div>
-      <div><b>Bases de Données:</b> SQL Server, Oracle, MySQL, MongoDB. Modélisation, Optimisation, CRUD, Sauvegarde</div>
-      <div><b>Ingénierie & Outils:</b> Git, APIs, Intégration Système, Google Colab, Jupyter, Streamlit, Gradio, Power Automate</div>
-    </div>
-  </section>
+    <section>
+      <h2>Projets Phares & Impact</h2>
 
-  <section>
-    <h2>Projets Phares & Impact</h2>
-    
-    <div class="projet">
-      <h3>1. Détecteur de Churn & Sentiment - IA pour la Banque</h3>
-      <p><b>Problème:</b> L'analyse manuelle de 500+ réclamations clients prenait 3 jours.</p>
-      <p><b>Solution:</b> Développement d'une application Gradio + NLP avec CamemBERT qui classe les raisons de churn et génère Rapport + Graphique + ROI en 2 secondes. Précision: 90%.</p>
-      <p><b>Impact:</b> Potentiel de réduction du churn de 2% = +120M MZN/an. Aide à la décision en temps réel pour la direction.</p>
-      <p><b>Tech:</b> Python, Gradio, NLP, BERT, Pandas, Matplotlib</p>
-      <a href="https://github.com/JeremieRaja/raja-dignas.github.io/blob/main/projects/churn-detector/app.py" target="_blank">Voir le Code sur GitHub</a>
-    </div>
+      <div class="projet">
+  <h3>1. Détecteur de Fuite Clients & Analyse de Sentiment - IA pour Banque</h3>
+  <p><b>Problème:</b> L'analyse manuelle de 500+ réclamations clients prenait 3 jours.</p>
+  <p><b>Solution:</b> Développement d'une app Gradio + NLP avec CamemBERT qui classe les motifs de départ et génère Rapport + Graphique + ROI en 2 secondes. 90% de Précision.</p>
+  <p><b>Impact:</b> Potentiel de réduire la fuite de 2% = +$50,000/mois. Permet une prise de décision en temps réel pour la direction.</p>
+  <p><b>Tech:</b> Python, Gradio, NLP, BERT, Pandas, Matplotlib</p>
+  
+  <div class="project-buttons">
+    <a href="https://github.com/JeremieRaja/my_portefolio.github.io/blob/main/projects/churn-detector/churn_detector_abc.ipynb" target="_blank" class="btn-code">
+      Voir le Code sur GitHub
+    </a>
+    <a href="https://colab.research.google.com/github/JeremieRaja/my_portefolio.github.io/blob/main/projects/churn-detector/churn_detector_abc.ipynb" target="_blank" class="btn-demo">
+      ▶️ Lancer la Démo sur Colab
+    </a>
+  </div>
+  <p class="demo-note">*Cliquez "Exécuter tout" dans Colab pour lancer l'interface Gradio*</p>
+      </div>
 
-    <div class="projet">
-      <h3>2. Pipeline ETL & Reporting Automatisé</h3>
-      <p><b>Solution:</b> Pipeline automatisé pour traiter +10 000 commentaires clients multilingues. Nettoyage, transformation et chargement avec Python + Pandas + SQL.</p>
-      <p><b>Impact:</b> Réduction de 87% du temps d'analyse manuelle. Garantie de la qualité des données pour les dashboards BI.</p>
-      <p><b>Tech:</b> Python, Pandas, ETL, SQL, Validation de Données</p>
-    </div>
-    
-    <div class="projet">
-      <h3>3. Système de Gestion de Base de Données Bancaire</h3>
-      <p><b>Solution:</b> Conception et modélisation d'une base SQL Server pour comptes Standard, Étudiant et Devise Étrangère. Mise en place des règles de gestion pour frais et change.</p>
-      <p><b>Impact:</b> Garantie de l'intégrité des données pour dépôts, retraits et transferts via contraintes et tests.</p>
-      <p><b>Tech:</b> SQL Server, Modélisation BDD, Règles de Gestion</p>
-    </div>
+      <div class="projet">
+        <h3>2. Pipeline ETL & Reporting Automatisé</h3>
+        <p><b>Solution:</b> Pipeline automatisé pour traiter +10,000 commentaires clients multilingues. Nettoyage, transformation et chargement avec Python + Pandas + SQL.</p>
+        <p><b>Impact:</b> Réduction de 87% du temps d'analyse manuelle. Garantie de la qualité des données pour les dashboards BI.</p>
+        <p><b>Tech:</b> Python, Pandas, ETL, SQL, Validation des Données</p>
+      </div>
+      
+      <div class="projet">
+        <h3>3. Système de Gestion de Base de Données Bancaire</h3>
+        <p><b>Solution:</b> Conception et modélisation d'une base SQL Server pour comptes Standard, Étudiant et Devises. Implémentation des règles de gestion pour frais et change.</p>
+        <p><b>Impact:</b> Garantie de l'intégrité et de la cohérence des données pour dépôts, retraits et virements via contraintes et tests.</p>
+        <p><b>Tech:</b> SQL Server, Modélisation BDD, Logique Métier</p>
+      </div>
 
-    <div class="projet">
-      <h3>4. Chatbot IDM avec NLP</h3>
-      <p><b>Solution:</b> Développement d'un chatbot de service client avec dataset réel IDM. Application du NLP pour classification des intentions.</p>
-      <p><b>Tech:</b> Python, NLP, Chatbot, Analyse de Données</p>
-    </div>
-  </section>
+      <div class="projet">
+        <h3>4. Chatbot IDM avec NLP</h3>
+        <p><b>Solution:</b> Développement d'un chatbot service client avec un vrai jeu de données IDM. Application du NLP pour la classification d'intention.</p>
+        <p><b>Tech:</b> Python, NLP, Chatbot, Analyse de Dataset</p>
+      </div>
+    </section>
 
-  <section>
-    <h2>Expérience Professionnelle & Académique</h2>
-    <div class="job">
-      <h3>Analyste de Données & Qualité | Projet de Master</h3>
-      <p class="date">2024 - 2025</p>
-      <ul>
-        <li>BI & KPIs: Définition et suivi des indicateurs de satisfaction client. Création de dashboards Matplotlib pour identifier les tendances</li>
-        <li>Big Data: Web scraping et traitement de 10 000+ commentaires multilingues</li>
-        <li>Modélisation Prédictive: Identification des facteurs clés de churn et d'insatisfaction avec ML et Analyse de Sentiments</li>
-      </ul>
-    </div>
-    <div class="job">
-      <h3>Technicien ETL & Qualité de Données | Projet R&D</h3>
-      <p class="date">2024 - 2025</p>
-      <ul>
-        <li>Construction de pipelines de données avec Python, Pandas, SQL pour organisation et contrôle qualité</li>
-        <li>Opérations sur MySQL, MongoDB, Oracle. Versioning Git et documentation des processus</li>
-      </ul>
-    </div>
-     <div class="job">
-      <h3>Chroniqueur Radio / Journaliste – Ifrikya FM</h3>
-      <p class="date">Mar - Juil 2025</p>
-      <ul>
-        <li>Développement de solides compétences en prise de parole et communication. Couverture de programmes tech et innovation</li>
-      </ul>
-    </div>
-  </section>
+    <section>
+      <h2>Expérience Professionnelle & Académique</h2>
+      <div class="job">
+        <h3>Data Analyst & Qualité | Projet de Master</h3>
+        <p class="date">2024 - 2025</p>
+        <ul>
+          <li>BI & KPI: Définition et suivi des indicateurs de satisfaction client. Création de dashboards avec Matplotlib pour identifier les tendances</li>
+          <li>Données à Grande Échelle: Web scraping et traitement de 10,000+ commentaires multilingues</li>
+          <li>Modélisation Prédictive: Identification des facteurs clés de fuite et d'insatisfaction avec ML et Analyse de Sentiment</li>
+        </ul>
+      </div>
+      <div class="job">
+        <h3>Technicien ETL & Qualité des Données | Projet R&D</h3>
+        <p class="date">2024 - 2025</p>
+        <ul>
+          <li>Création de pipelines de données avec Python, Pandas, SQL pour organisation et contrôle qualité</li>
+          <li>Opérations sur MySQL, MongoDB, Oracle. Versioning Git et documentation des processus</li>
+        </ul>
+      </div>
+       <div class="job">
+        <h3>Chroniqueur Radio / Journaliste – Ifrikya FM</h3>
+        <p class="date">Mar - Juil 2025</p>
+        <ul>
+          <li>Développement de solides compétences en prise de parole et communication. Couverture d'émissions tech et innovation</li>
+        </ul>
+      </div>
+    </section>
 
-  <section>
-    <h2>Formation</h2>
-    <p><b>Master Intelligence Artificielle - Spécialisation TALN</b> | Université de Blida 1, Algérie | 2025</p>
-    <p class="thesis">Mémoire: "Analyse de Sentiments sur la Qualité de Service" - Application directe au NPS et à la satisfaction client.</p>
-    <p><b>Licence Ingénierie des Systèmes d'Information et Logiciel</b> | Université de Blida 1, Algérie | 2023</p>
-  </section>
+    <section>
+      <h2>Formation</h2>
+      <p><b>MSc Intelligence Artificielle - Spécialité NLP</b> | Université de Blida 1, Algérie | 2025</p>
+      <p class="thesis">Mémoire: "Analyse de Sentiment sur la Qualité de Service" - Application directe au NPS et à la satisfaction client.</p>
+      <p><b>Licence Systèmes d'Information et Génie Logiciel</b> | Université de Blida 1, Algérie | 2023</p>
+    </section>
 
-  <section>
-    <h2>Langues & Soft Skills</h2>
-    <p><b>Langues:</b> Français: Natif | Portugais: Intermédiaire | Anglais: Avancé</p>
-    <p><b>Soft Skills:</b> Pensée Analytique, Communication à la Direction, Automatisation de Processus, Travail d'Équipe, Résolution de Problèmes, Confidentialité</p>
-  </section>
+    <section>
+      <h2>Langues & Soft Skills</h2>
+      <p><b>Langues:</b> Français: Langue Maternelle | Portugais: Intermédiaire | Anglais: Intermédiaire Avancé</p>
+      <p><b>Soft Skills:</b> Esprit Analytique, Communication vers la Direction, Automatisation des Processus, Travail d'Équipe, Résolution de Problèmes, Confidentialité</p>
+    </section>
+  </main>
 
   <footer>
-    <h2>Contactez-moi</h2>
-    <p>Ouvert aux postes: Digital & IA Officer, Data Analyst, Business Intelligence, Systèmes IT</p>
+    <h2>Restons en Contact</h2>
+    <p>Ouvert aux postes de: Responsable Digital & IA, Data Analyst, Business Intelligence, Systèmes IT</p>
     <a href="mailto:rajadignas@gmail.com" class="btn">Me Contacter</a>
     <p>© 2026 Raja Anton Dignas</p>
   </footer>
 </body>
-        </html>
+               </html>
