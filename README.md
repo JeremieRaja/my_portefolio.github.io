@@ -20,8 +20,7 @@ Location: Mozambique | Open to: Digital & AI Officer roles
 **Problem**: Banks lose customers and don't know why.  
 **Solution**: AI tool that analyzes 1000s of complaint emails and tells management the top 3 reasons for churn + ROI.  
 **Tech**: Python, Gradio, Pandas, Matplotlib, NLP  
-**Result**: -80% analysis time. Projected savings: important value per month.  
-**Code**: `/projects/churn-detector` 
+**Result**: -80% analysis time. Projected savings: important value per month.
 
 ---
 
